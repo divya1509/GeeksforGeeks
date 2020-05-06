@@ -1,0 +1,20 @@
+public double termOfGP(int A,int B,int N)
+    {
+        if(N==1) return A;
+        if(N==2) return B;
+        //Your code here
+        // double r=(double)(B/A);
+        double b= 1, a=1;
+        
+        double ans=1;
+        for(int i=1; i<N; i++){
+            // ans= ans*r;
+            // System.out.println(ans);
+            b*=B;
+            a*=A;
+            // System.out.println(b+ " " + a);
+        }
+        
+        ans= (b*A)/a;
+        return ans;
+    }
