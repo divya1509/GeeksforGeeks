@@ -1,0 +1,4 @@
+public int absolute(int I) {
+        // Your code here
+        return Math.abs(I);
+    }
