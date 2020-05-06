@@ -1,0 +1,21 @@
+public int majorityWins(int arr[],int n,int x,int y)
+    {
+            int count_x=0;//counter to count frequency of x
+            int count_y=0;//counter to count frequency of y
+
+        /******************************************
+            Your code goes here, Geeks
+          *******************************************/
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]==x) count_x++;
+            if(arr[i]==y) count_y++;
+        }
+        
+        if (count_x > count_y) return x;
+            /*Code here*/
+        else if (count_y > count_x) return y;
+            /*Code here*/
+        else return x>y ? y: x;
+            /*Code here*/
+
+    }
