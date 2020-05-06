@@ -1,0 +1,34 @@
+static void subarraySum(int n, int s, int[] arr) {
+        
+        // Your code here
+        int sum = 0, start =0, end = 0;
+        while(end<n){
+            // if(end>=38) System.out.println("end "  + end );
+            
+            if(sum + arr[end]<s){
+                sum+=arr[end];
+                end++;
+                // System.out.println("here1 " + sum );
+            }else if(sum + arr[end] ==s){
+                // System.out.println("here2 ");
+                start++;
+                end++;
+                System.out.print(start +" "+ end);
+                return;
+            }else{
+                // System.out.println("here3 " + sum + " " + start);
+                sum-=arr[start];
+                start++;
+            }
+        }
+        
+        if(sum==s){
+            // System.out.println("here4");
+                start++;
+                end++;
+                System.out.print(start +" "+ end);
+                return;
+        }
+        System.out.print("-1");
+        
+    }
