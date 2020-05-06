@@ -1,0 +1,19 @@
+ public static long gcd(long a, long b){
+        if(a%b==0) return b;
+        
+        return gcd(b, a%b);
+    }
+    
+	public static long getSmallestDivNum(int n){
+//add code here.
+
+    if(n==1) return 1;
+    
+    long lcm=2, hcf;
+    for(int i=3; i<=n; i++){
+        hcf = gcd(lcm,i);
+        lcm = (lcm*i)/hcf;
+    }
+    
+    return lcm;
+}
