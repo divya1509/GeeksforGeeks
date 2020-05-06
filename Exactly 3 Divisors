@@ -1,0 +1,21 @@
+public static boolean isPrime(int N)
+    {
+      //Your code here
+      for(int i=2; i*i<=N; i++){
+          if(N%i==0) return false;
+      }
+      
+      return true;
+    }
+
+    
+    public int exactly3Divisors(int N)
+    {
+        int count=0;
+        //Your code here
+        for(int i=2; i*i<=N; i++){
+            if(isPrime(i)) count++;
+        }
+        
+        return count;
+    }
