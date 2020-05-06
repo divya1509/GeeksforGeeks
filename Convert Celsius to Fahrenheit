@@ -1,0 +1,6 @@
+public double cToF(int C)
+    {
+        //Your code here
+        double ans = ((9*C)/5) + 32;
+        return ans;
+    }
