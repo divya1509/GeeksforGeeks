@@ -1,0 +1,11 @@
+public int digitsInFactorial(int N)
+    {
+        //Your code here
+        double ans =0;
+        for(int i=2; i<=N; i++){
+            ans+= Math.log10(i);
+        }
+        
+        int fin=(int) (Math.floor(ans)+1);
+        return fin;
+    }
