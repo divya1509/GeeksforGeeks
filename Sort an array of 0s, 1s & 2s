@@ -1,0 +1,26 @@
+public static void swap(int[] arr, int i, int j){
+    int t= arr[i];
+    arr[i]= arr[j];
+    arr[j]= t;
+}
+
+public static void sort012(int a[], int n){
+    // code here 
+    
+    int i=0, j=0, k=0;
+    while(k<a.length){
+        if(a[k]==1){
+            swap(a, j, k);
+            j++;
+        }else if(a[k]==0){
+            swap(a, j, k);
+            swap(a, j, i);
+            i++;
+            j++;
+        }
+        
+        
+        k++;
+    }
+    
+}
