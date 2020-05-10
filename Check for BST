@@ -1,0 +1,36 @@
+public class Tree
+{
+    static class help{
+        boolean check = true;
+        int min= Integer.MAX_VALUE;
+        int max= Integer.MIN_VALUE;
+    }
+    
+    public static help sol(Node root){
+        if(root==null) return new help();
+        
+        help left= sol(root.left);
+        help right = sol(root.right);
+        help curr = new help();
+        if(left.check && right.check && left.max<root.data && right.min>root.data){
+            curr.check = true;
+            curr.min= left.max==Integer.MIN_VALUE? root.data: left.max ;
+            curr.max= right.min==Integer.MAX_VALUE? root.data: right.min ;
+        }else{
+            curr.check = false;
+        }
+        
+        // System.out.println(curr.check + " " + root.data + " " + curr.min + " " + curr.max);
+        
+        return curr;
+    }
+    
+    boolean isBST(Node root)
+        {
+            // code here.
+            
+            help ans = sol(root);
+            return ans.check;
+            
+        }
+}
