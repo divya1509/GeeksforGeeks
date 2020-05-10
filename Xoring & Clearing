@@ -1,0 +1,25 @@
+class Geeks{
+    
+    static void printArr(int arr[],int n)
+    {
+        //Your code for printing arr here
+        for(int i=0; i<arr.length; i++) System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+    
+   static void setToZero(int arr[],int n)
+    {
+        //use Arrays.fill to set arr to zero
+        Arrays.fill(arr, 0);
+    }
+    
+   static void xor1ToN(int arr[], int n)
+    {
+        for(int i=0; i<arr.length; i++){
+            arr[i]^=i;
+        }
+        
+           //Xor arr[i]^i
+        
+    }
+}
