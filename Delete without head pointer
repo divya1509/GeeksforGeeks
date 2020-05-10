@@ -1,0 +1,8 @@
+void deleteNode(Node node)
+    {
+         // Your code here
+         Node n= node.next;
+         node.data = n.data;
+         node.next = n.next;
+         n.next=null;
+    }
