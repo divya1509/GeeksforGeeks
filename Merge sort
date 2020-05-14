@@ -1,0 +1,15 @@
+void merge(int arr[], int l, int m, int r)
+    {
+         // Your code here
+            
+            int[] help = new int[r-l+1];
+            
+            for(int k=0, i=l; i<=r; i++, k++){
+                help[k]= arr[i];
+            }
+            Arrays.sort(help);
+          
+          for(int k=0, i=l; i<=r; i++, k++){
+            arr[i]= help[k];
+          }
+    }
