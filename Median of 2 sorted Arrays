@@ -1,0 +1,48 @@
+public static int findMedian(int arr[], int n, int brr[], int m){
+    //Your code here
+    int tsum= n+m;
+    int itr =0;
+    boolean check= true;
+    if(tsum%2==0) {
+        itr = tsum/2; 
+        check = true;
+    }else {
+        itr = (tsum)/2;
+        check = false;
+    }
+    
+    int prev=0, curr=0, i=0, j=0;
+    while(itr>=0 && i<n && j<m){
+        if(arr[i]>brr[j]){
+            prev= curr;
+            curr= brr[j];
+            j++;
+        }else{
+            prev= curr;
+            curr= arr[i];
+            i++;
+        }
+        
+        itr--;
+    }
+    while(itr>=0 && i<n){
+        prev= curr;
+        curr= arr[i];
+        i++;
+        itr--;
+    }
+    
+    while(itr>=0 && j<m){
+        prev= curr;
+        curr= brr[j];
+        j++;
+        itr--;
+    }    
+    
+    if(check) {
+        curr= (curr+prev)/2;
+    }
+    
+    return curr;
+    
+}
