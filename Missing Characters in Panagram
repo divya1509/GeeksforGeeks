@@ -1,0 +1,24 @@
+class MissingPanagram
+{
+    // Complete the function
+    // str: input string
+    public static String missingPanagram(String str)
+    {
+        // Find and return the missing characters
+        // to complete Panagram string
+        int[] dic = new int[26];
+        
+        for(int i=0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            if(ch>='a' && ch<='z') dic[ch-'a']++;
+            else dic[ch-'A']++;
+        }
+        
+        String ans= "";
+        for(int i=0; i<26; i++){
+            if(dic[i]==0) ans+=(char)('a'+i);
+        }
+        
+        return ans;
+        
+    }
