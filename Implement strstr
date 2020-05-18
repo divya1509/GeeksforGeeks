@@ -1,0 +1,17 @@
+class GfG
+{
+    int strstr(String str, String target)
+    {
+       // Your code here
+       
+       int i=0, j;
+       for(j=0; j<str.length() && i<target.length(); j++){
+           if(str.charAt(j)== target.charAt(i)) i++;
+           else i= 0;
+       }
+       
+       if(i==target.length()) return j-target.length();
+       
+       return -1;
+    }
+}
