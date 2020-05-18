@@ -1,0 +1,25 @@
+class MaxOccur{
+    
+    // Function to get maximum occuring 
+    // character in given string str
+    public static char getMaxOccuringChar(String line){
+        
+        // Your code here
+        int[] dic= new int[26];
+        for(int i=0; i<line.length(); i++){
+            dic[line.charAt(i)- 'a']++;
+        }
+        
+        char ans= 'a'; int max= Integer.MIN_VALUE;
+        for(int i=0; i<26; i++){
+            if(dic[i]>max){
+                max = dic[i];
+                ans= (char) ('a'+ i);
+            }
+        }
+        
+        return ans;
+        
+    }
+    
+}
