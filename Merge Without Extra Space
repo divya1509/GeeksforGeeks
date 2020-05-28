@@ -1,0 +1,60 @@
+class MergeSort
+{
+    // Function to merge the two sorted arrays
+    // arr1[], arr2[]: two input arrays
+    // n, m: size of arr1[] and arr2[] respectively
+    public static void merge(int arr1[], int arr2[], int n, int m) 
+    {
+       // add your code here 
+    //   int i =0, j=0;
+    //   while(i<n){
+    //       if( arr1[i]>arr2[j]){
+    //           swap(arr1, arr2, i, j);
+    //         //   Arrays.sort(arr2);
+    //             while( j+1<m && arr2[j]>arr2[j+1]){
+    //                 swap(arr2, arr2, j, j+1);
+    //                 j++;
+    //             }
+    //             j=0;
+    //       }
+    //       i++;
+    //   }
+    
+        int i, j, gap = n+m;
+        
+        for(gap = gap_generator(gap); gap>0; gap= gap_generator(gap) ){
+            
+            //first array
+            for(i=0; i + gap<n; i++ ){
+                if(arr1[i]>arr1[i+gap] ) swap(arr1, arr1, i, i+gap);
+            }
+            
+            //both
+            for(j= gap>n?gap-n: 0; j<m && i<n ; i++, j++ ){
+                if(arr1[i]>arr2[j] ) swap(arr1, arr2, i, j);
+            }
+            
+            //second
+            if(j<m){
+                for(j=0; j+gap<m; j++)
+                    if(arr2[j]>arr2[j+gap] )
+                        swap(arr2, arr2, j, j+gap);
+            }
+            
+            
+        }
+       
+    }
+    
+    static int gap_generator(int gap){
+        if(gap<=1) return 0;
+        return gap/2 + gap%2;
+    }
+    
+    static void swap( int[] arr1, int[] arr2, int i, int j ){
+        int t= arr1[i];
+        arr1[i]= arr2[j];
+        arr2[j]= t;
+    }
+    
+}
