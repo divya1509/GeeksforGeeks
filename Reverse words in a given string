@@ -1,0 +1,23 @@
+class Reverse {
+    
+    static String sol(String sd){
+        String ans="", temp="";
+        int i=0;
+        while(i<=sd.length()){
+            if(i!=sd.length() && sd.charAt(i)!='.') temp+= sd.charAt(i);
+            else {
+                if(!ans.equals("")) ans=temp+"."+ans;
+                else ans= temp;
+                temp="";
+            }
+            i++;
+        }
+        return ans;
+    }
+
+    public static void reverseWords(String sd) {
+
+        // Your code here
+        System.out.print(sol(sd));
+    }
+}
