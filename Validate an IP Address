@@ -1,0 +1,40 @@
+
+class Solution {
+    
+    static boolean check(String str ){
+        if(str.length()==0) return false;
+        if(str.charAt(0)=='0'){
+            if(str.length()>1) return false;
+            return true;
+        }
+        
+        int i=0, num=0;
+        while(i<str.length()){
+            char ch= str.charAt(i);
+            if(ch<'0' || ch>'9') return false;
+            num= num*10 + (ch-'0');
+            i++;
+        }
+        
+        // System.out.println(num + " " + str);
+        if(num>0 && num<=255) return true;
+        return false;
+    }
+
+    public boolean isValidIP(String s) {
+        // Write your code here
+        String temp="";
+        int i=0, count=0;
+        while(i<=s.length()){
+            if(i==s.length() || s.charAt(i)=='.'){
+                count++;
+                if(!check(temp)) return false;
+                temp="";
+            }else temp+=s.charAt(i);
+            i++;
+        }
+        
+        if(count==4) return true;
+        return false;
+    }
+    
