@@ -1,0 +1,27 @@
+class LexSort
+{
+    // complete the function
+    static ArrayList<String> powerSet(String s)
+    {
+        // add your code here
+        if (s.length() == 0) {
+           ArrayList<String> ans = new ArrayList<>();
+           ans.add("");
+           return ans;
+        }
+        
+        ArrayList<String> recAns = powerSet(s.substring(1));
+        ArrayList<String> ans = new ArrayList<>();
+        char ch = s.charAt(0);
+        
+        for(String str: recAns){
+            ans.add(str);
+        }
+        for(String str: recAns){
+            ans.add(ch + str);
+        }
+        
+        Collections.sort(ans);
+        return ans;
+    }
+}
