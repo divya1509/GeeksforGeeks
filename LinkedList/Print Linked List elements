@@ -1,0 +1,13 @@
+class GfG
+{
+    // Print elements of a linked list on console
+    // head pointer input could be NULL as well
+    // for empty list
+    void printList(Node head)
+    {
+        //add code here.
+        if(head == null) return;
+        System.out.print(head.data + " ");
+        printList(head.next);
+    }
+}
