@@ -1,0 +1,17 @@
+class Solution
+{
+    // A[] : the input array of positive integers
+    // N : size of the array arr[]
+    // X : the required sum
+    public boolean keypair(int[] A, int N, int X)
+    {
+        // code here
+        Set<Integer> hs = new HashSet<>();
+        for (int i = 0; i < N; i++) {
+            int diff = X - A[i];
+            if(hs.contains(diff) ) return true;
+            hs.add(A[i] );
+        }
+        return false;
+    }
+}
