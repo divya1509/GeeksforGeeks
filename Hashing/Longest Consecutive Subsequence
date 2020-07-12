@@ -1,0 +1,27 @@
+class GfG
+{
+    // Function to find Longest Consecutive Subsequence
+    int findLongestConseqSubseq(int a[], int n)
+    {
+        
+	    // Your code here
+	    Set<Integer> hs = new HashSet<>();
+	    for (int i = 0; i < n; i++) {
+	        hs.add(a[i]);
+	    }
+	    
+	    int ans = 0;
+	    for (int i = 0; i < n; i++) {
+	        if(!hs.contains(a[i] - 1)) {
+	            int curr = 1, num = a[i] + 1;
+	            while(hs.contains(num)) {
+	                num++;
+	                curr++;
+	            }
+	            ans = Math.max(ans, curr);
+	        }
+	    }
+	    return ans;
+	    
+    }
+}
