@@ -1,0 +1,52 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+		Scanner scn = new Scanner(System.in);
+		int t = scn.nextInt();
+		while(t-- > 0) {
+		    int n = scn.nextInt();
+		    long target = scn.nextLong();
+		    
+		    long[] arr = new long[n];
+		    
+		    for(int i = 0; i < n; i++) arr[i] = scn.nextLong();
+		    
+		    sol(arr, target);
+		  //  System.out.println("target" + target);
+		    
+		}
+		
+	}
+	
+	private static void sol(long[] arr, long target) {
+	    int start = 0, end = 0;
+	    long curr = 0;
+	    
+	    while (end < arr.length) {
+	       // System.out.println(curr + " curr " + " target " + target);
+	        if(curr + arr[end]  == target) {
+	            System.out.println(++start + " " + ++end);
+	            return;
+	       } else if(curr + arr[end] > target) {
+	           curr -= arr[start];
+	           start++;
+	       } else {
+	           curr += arr[end];
+	           end++;
+	       }
+	       
+	    }
+	    System.out.println("-1");
+	} 
+	
+	
+}
+
+
+
