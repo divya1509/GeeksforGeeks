@@ -1,0 +1,29 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		//code
+		Scanner scn = new Scanner(System.in);
+		int t = scn.nextInt();
+		while (t-- > 0) {
+		    int n = scn.nextInt();
+		    int m = scn.nextInt();
+		    n = (n * (n + 1)) / 2;
+		  //  System.out.println("here");
+		    
+		    m = m % n;
+		    int i = 1;
+		    while(m >= i) {
+		      //  System.out.println(m + " " + i);
+		        m -= i;
+		        i++;
+		    }
+		    System.out.println(m);
+		}
+		
+	}
+}
